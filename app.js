@@ -16,7 +16,7 @@ form.addEventListener('submit', async (event) => {
     };
 
     try {
-        const response = await fetch('http://localhost:5000/sims', {
+        const response = await fetch('http://0.0.0.0:5000/sims', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +38,7 @@ form.addEventListener('submit', async (event) => {
 
 fetchButton.addEventListener('click', async () => {
     try {
-        const response = await fetch('http://localhost:5000/sims');
+        const response = await fetch('http://0.0.0.0:5000/sims');
         
         if (response.ok) {
             const simDetails = await response.json();
