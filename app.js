@@ -2,6 +2,9 @@ const form = document.getElementById('simForm');
 const fetchButton = document.getElementById('fetchData');
 const simTableBody = document.querySelector('#simTable tbody');
 
+// Base URL for your API
+const BASE_URL = 'https://sim-management-system-flask.onrender.com';
+
 form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
@@ -16,7 +19,7 @@ form.addEventListener('submit', async (event) => {
     };
 
     try {
-        const response = await fetch('http://0.0.0.0:5000/sims', {
+        const response = await fetch(`${BASE_URL}/sims`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -38,7 +41,7 @@ form.addEventListener('submit', async (event) => {
 
 fetchButton.addEventListener('click', async () => {
     try {
-        const response = await fetch('http://0.0.0.0:5000/sims');
+        const response = await fetch(`${BASE_URL}/sims`);
         
         if (response.ok) {
             const simDetails = await response.json();

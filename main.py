@@ -1,6 +1,6 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS  # Import CORS
+from flask_cors import CORS
 import os
 
 app = Flask(__name__)
@@ -39,16 +39,10 @@ def get_all_sim_details():
     sim_details = SIMDetails.query.all()
     return jsonify([sim_detail.to_dict() for sim_detail in sim_details])
 
-# if __name__ == '__main__':
-#     with app.app_context():
-#         db.create_all()
-#     app.run(debug=True, port=5000)
-
-
-# if __name__ == "__main__":
-#     port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
-#     app.run(host="0.0.0.0", port=port, debug=True)
+@app.route('/')
+def serve_index():
+    return send_from_directory('.', 'index.html')
 
 if __name__ == "__main__":
-    app.run()
-
+    port = int(os.environ.get("PORT", 5000))  # Default to 5000 if PORT is not set
+    app.run(host="0.0.0.0", port=port, debug=True)
