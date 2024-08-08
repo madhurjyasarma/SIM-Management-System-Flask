@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM Details</title>
+</head>
+<body>
+    <h1>Add SIM Details</h1>
+    <form id="simForm">
+        <label for="simId">SIM ID:</label>
+        <input type="text" id="simId" name="simId" required><br><br>
+
+        <label for="deviceId">Device ID:</label>
+        <input type="text" id="deviceId" name="deviceId" required><br><br>
+
+        <label for="deviceName">Device Name:</label>
+        <input type="text" id="deviceName" name="deviceName" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>SIM Details</h2>
+    <button id="fetchData">Fetch SIM Details</button>
+    <table id="simTable" border="1" style="margin-top: 20px;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>SIM ID</th>
+                <th>Device ID</th>
+                <th>Device Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+    <script src="app.js"></script>
+</body>
+</html>
