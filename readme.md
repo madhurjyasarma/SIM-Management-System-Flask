@@ -20,11 +20,18 @@ pip install -r requirements.txt
 
 ## Usage
 
-Run the Flask app:
+1. Run the Flask app:
 ```
 python main.py
 
 python -m http.server 8000
 ```
+
+2. Use the following endpoints:
+
+- `POST /sims`: Create a new SIM card detail
+- `GET /sims`: Retrieve all SIM card details
+
+
 
 
